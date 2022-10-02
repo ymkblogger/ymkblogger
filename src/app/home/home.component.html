@@ -1,0 +1,67 @@
+<section class="section-about">
+    <div class="container">
+        <div class="row">
+           
+            <div class="col-lg-12 col-md-12 col-sm-12 center">
+                <h5>
+                    "YOU FEEL. I FOCUS. WE FRAME”
+                    A wedding is a validation coupled with the showcase of Love inclusive of 
+                    various events with exotic venues, food, guests, dresses, jewellery and so on- 
+                    What if it could never be recorded?
+                </h5>
+                <h6> 
+                    A chronology of a couple’s journey where they vow together to be One.<br><br>
+                    
+                    we are creating fiction out of reality.
+                </h6>
+
+                    <button type="submit" class="btn btn-warning">Make memories with us</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="gallery">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 center">
+                <h1>Gallery</h1>
+            </div>
+            <div *ngFor="let item of gallery; index as i" class="{{item.class}} col-sm-12">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <img src="assets/images/stories/story{{i+4}}.jpg">
+                    </div>
+                    <div class="panel-body">
+                        <p>{{item.description}}/ <a>
+                            Read More >></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-about">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 center">
+                <h1>REAL <span class="heading-highlight">LOVE  </span>STORIES</h1>
+            </div>
+             <div class="col-sm-12 center">
+                <h6>
+                    like a river flows surely to the sea, so it goes some things are meant to be.
+                </h6>
+
+                <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                    <div ngxSlickItem *ngFor="let list of stories; index as i" class="slide col-lg-4 col-md-4 col-sm-12">
+                        <img src="assets/images/stories/story{{i+1}}.jpg" alt="" width="100%">
+                        <h6>{{list.name}} | <span class="heading-highlight">{{list.post}}  </span></h6> 
+                    </div>
+                </ngx-slick-carousel>
+
+            </div>
+        </div>
+    </div>
+</section>
+

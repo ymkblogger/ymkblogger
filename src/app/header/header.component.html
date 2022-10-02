@@ -1,0 +1,66 @@
+<div class="container">
+<div class="main-banner">
+  <a class="navbar-brand" routerLink="home" skipLocationChange=true>
+    <div class="logo-container">
+      <img src="assets/images/logo.png">
+    </div>
+  </a>
+  <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+    <div ngxSlickItem *ngFor="let list of stories; index as i" class="slide col-lg-3 col-md-3 col-sm-12">
+        <img src="assets/images/banner/banner{{i+1}}.jpg" alt="" width="100%">
+        
+    </div>
+</ngx-slick-carousel>
+</div>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <ul class="navbar-nav-list">
+      <li class="nav-item" *ngFor="let item of list; index as i">
+        <a routerLink="{{item.name}}" routerLinkActive="active"
+        skipLocationChange=true>{{item.name}}</a>
+      </li>
+      <!-- <li class="nav-item quick-link">
+        <a class="nav-link" (click)="slideToggel()">
+          <i class="icon icon-ex-small">
+            <svg focusable="false">
+              <use xlink:href="#icon_menu"></use>
+            </svg>
+          </i>
+        </a>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+
+<div class="slider-menu" [ngClass]="isOpen ? '' : 'active'">
+  <a class="close-slide" (click)="slideToggel()">
+    <i class="icon icon-ex-small">
+      <svg focusable="false">
+        <use xlink:href="#icon_menu"></use>
+      </svg>
+    </i>
+  </a>
+
+  <a class="navbar-brand">
+    <i class="icon icon-small">
+      <svg focusable="false">
+        <use xlink:href="#icon_logo_color"></use>
+      </svg>
+    </i>
+    <div>
+      <span class="company-name">tulshitrust</span>
+      <span class="company-type">TECHNOLOGIES</span>
+    </div>
+  </a>
+
+  <ul>
+    <li *ngFor="let item of list; index as i" class="menu-list">
+      <a (click)="slideToggel()" routerLink="{{item.name}}" routerLinkActive="active"
+        skipLocationChange=true>{{item.name}}</a>
+    </li>
+  </ul>
+</div>
+<div class="overlay" [ngClass]="isOpen ? '' : 'active'" (click)="slideToggel()">
+</div>
